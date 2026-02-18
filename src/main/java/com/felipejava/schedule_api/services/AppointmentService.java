@@ -2,6 +2,7 @@ package com.felipejava.schedule_api.services;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 import org.springframework.stereotype.Service;
@@ -32,10 +33,10 @@ public class AppointmentService {
     }
 
     public void deleteAppointment(LocalDateTime appointmentDateTime, String customer) {
-        appointmentRepository.deleteAppointmentByDateTimeAndCustomer(appointmentDateTime, customer);
+        appointmentRepository.deleteByAppointmentDateTimeAndCustomer(appointmentDateTime, customer);
     }
 
-    public Appointment appointmentOfTheDay(LocalDate date) {
+    public List<Appointment> appointmentOfTheDay(LocalDate date) {
         LocalDateTime firstHourOfDay = date.atStartOfDay();
         LocalDateTime endOfDay = date.atTime(23, 59, 59);
 

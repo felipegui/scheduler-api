@@ -17,7 +17,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "appointment")
+@Table(name = "tb_appointment")
 public class Appointment {
 
     @Id
@@ -25,9 +25,8 @@ public class Appointment {
     private Long id;
     private String service;
     private String professional;
-    private LocalDateTime appointmentDateTime = LocalDateTime.now();
+    private LocalDateTime appointmentDateTime;
     private String customer;
     private Integer customerPhone;
-
-
+    private LocalDateTime createdAt = LocalDateTime.now();
 }
