@@ -27,6 +27,6 @@ public class Appointment {
     private String professional;
     private LocalDateTime appointmentDateTime;
     private String customer;
-    private Integer customerPhone;
+    private String customerPhone;
     private LocalDateTime createdAt = LocalDateTime.now();
 }
